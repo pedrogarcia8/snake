@@ -757,7 +757,10 @@ Replace_Food:
 		add r1, r1, r3
 		jmp Replace_Boundaries
 	
-	
+	;caso a comida seja inicialmente calculada para aparecer em uma posicao ja ocupada por uma barreira,
+	;a posicao sera recalculada para outra posicao, definida por:
+	;Replace_Upper, Replace_Lower, Replace_East ou Replace_West
+	;A escolha do Replace sera "aleatoria"
 	Replace_Boundaries:
 		loadn r2, #160
 		cmp r1, r2
@@ -779,6 +782,218 @@ Replace_Food:
 		cmp r2, r3
 		jeg Replace_East
 		
+		loadn r2, #391
+		cmp r1, r2
+		jeq Replace_Lower
+		
+		loadn r2, #407
+		cmp r1, r2
+		jeq Replace_West
+		
+		loadn r2, #408
+		cmp r1, r2
+		jeq Replace_Upper
+		
+		loadn r2, #409
+		cmp r1, r2
+		jeq Replace_East
+		
+		loadn r2, #410
+		cmp r1, r2
+		jeq Replace_Lower
+		
+		loadn r2, #411
+		cmp r1, r2
+		jeq Replace_West
+		
+		loadn r2, #412
+		cmp r1, r2
+		jeq Replace_Upper
+
+		loadn r2, #432
+		cmp r1, r2
+		jeq Replace_East
+		
+		loadn r2, #447
+		cmp r1, r2
+		jeq Replace_Lower
+		
+		loadn r2, #448
+		cmp r1, r2
+		jeq Replace_West
+		
+		loadn r2, #449
+		cmp r1, r2
+		jeq Replace_Upper
+		
+		loadn r2, #450
+		cmp r1, r2
+		jeq Replace_East
+		
+		loadn r2, #451
+		cmp r1, r2
+		jeq Replace_Lower
+		
+		loadn r2, #452
+		cmp r1, r2
+		jeq Replace_West
+		
+		loadn r2, #472
+		cmp r1, r2
+		jeq Replace_Upper
+		
+		loadn r2, #487
+		cmp r1, r2
+		jeq Replace_East
+		
+		loadn r2, #488
+		cmp r1, r2
+		jeq Replace_Lower
+		
+		loadn r2, #489
+		cmp r1, r2
+		jeq Replace_West
+		
+		loadn r2, #490
+		cmp r1, r2
+		jeq Replace_Upper
+		
+		loadn r2, #491
+		cmp r1, r2
+		jeq Replace_East
+		
+		loadn r2, #492
+		cmp r1, r2
+		jeq Replace_Lower
+		
+		loadn r2, #891
+		cmp r1, r2
+		jeq Replace_Upper
+
+		loadn r2, #942
+		cmp r1, r2
+		jeq Replace_East
+		
+		loadn r2, #902
+		cmp r1, r2
+		jeq Replace_West
+		
+		loadn r2, #903
+		cmp r1, r2
+		jeq Replace_Upper
+		
+		loadn r2, #904
+		cmp r1, r2
+		jeq Replace_East
+		
+		loadn r2, #905
+		cmp r1, r2
+		jeq Replace_Lower
+		
+		loadn r2, #906
+		cmp r1, r2
+		jeq Replace_West
+		
+		loadn r2, #907
+		cmp r1, r2
+		jeq Replace_Upper
+		
+		loadn r2, #931
+		cmp r1, r2
+		jeq Replace_East
+		
+		loadn r2, #942
+		cmp r1, r2
+		jeq Replace_Upper
+		
+		loadn r2, #943
+		cmp r1, r2
+		jeq Replace_West
+		
+		loadn r2, #944
+		cmp r1, r2
+		jeq Replace_Lower
+		
+		loadn r2, #945
+		cmp r1, r2
+		jeq Replace_Upper
+		
+		loadn r2, #946
+		cmp r1, r2
+		jeq Replace_Lower
+		
+		loadn r2, #947
+		cmp r1, r2
+		jeq Replace_East
+		
+		loadn r2, #971
+		cmp r1, r2
+		jeq Replace_Upper
+		
+		loadn r2, #972
+		cmp r1, r2
+		jeq Replace_Lower
+		
+		loadn r2, #982
+		cmp r1, r2
+		jeq Replace_West
+		
+		loadn r2, #983
+		cmp r1, r2
+		jeq Replace_Upper
+		
+		loadn r2, #984
+		cmp r1, r2
+		jeq Replace_East
+		
+		loadn r2, #985
+		cmp r1, r2
+		jeq Replace_Lower
+		
+		loadn r2, #986
+		cmp r1, r2
+		jeq Replace_West
+		
+		loadn r2, #987
+		cmp r1, r2
+		jeq Replace_Upper
+
+		loadn r2, #1059
+		cmp r1, r2
+		jeq Replace_East
+
+		loadn r2, #1098
+		cmp r1, r2
+		jeq Replace_Upper
+		
+		loadn r2, #1099
+		cmp r1, r2
+		jeq Replace_West
+		
+		loadn r2, #1100
+		cmp r1, r2
+		jeq Replace_Lower
+		
+		loadn r2, #1137
+		cmp r1, r2
+		jeq Replace_East
+		
+		loadn r2, #1138
+		cmp r1, r2
+		jeq Replace_Upper
+		
+		loadn r2, #1139
+		cmp r1, r2
+		jeq Replace_West
+		
+		loadn r2, #1140
+		cmp r1, r2
+		jeq Replace_Lower
+		
+		loadn r2, #1141
+		cmp r1, r2
+		jeq Replace_Upper
+				
 		jmp Replace_Update
 		
 		Replace_Upper:
