@@ -696,7 +696,7 @@ Increment_score:
 	
 	outchar r0, r2
 	
-	loadn r3, #55
+	loadn r3, #50
 	cmp r0, r3	;checa se o score chegou a 7 (55 em ASCII)
 	jeq NextLevel
 	
@@ -759,7 +759,7 @@ Replace_Food:
 	
 	
 	Replace_Boundaries:
-		loadn r2, #40
+		loadn r2, #160
 		cmp r1, r2
 		jle Replace_Lower
 		
@@ -979,6 +979,7 @@ Dead_Snake_2: ; função para a fase 3
 	
 	call turret_check ;verifica se a snake colidiu com a torreta que atira
 	call wall_1_check
+	call wall_2_check
 	
 	; colidiu na própria cobra
 	Collision_Check:
@@ -1638,9 +1639,9 @@ tela3Linha18 : string "|                                      |"
 tela3Linha19 : string "|                                      |"
 tela3Linha20 : string "|                                      |"
 tela3Linha21 : string "|                                      |"
-tela3Linha22 : string "|                                      |"
-tela3Linha23 : string "|                                      |"
-tela3Linha24 : string "|                                      |"
+tela3Linha22 : string "|          |                           |"
+tela3Linha23 : string "|          |                           |"
+tela3Linha24 : string "|          |_                          |"
 tela3Linha25 : string "|                                      |"
 tela3Linha26 : string "|                  !                   |"
 tela3Linha27 : string "|                 <|>                  |"
